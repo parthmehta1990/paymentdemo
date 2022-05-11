@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="sts-plugin-paymentdemo" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>PaymentDemo</name>
+    <js-module name="PaymentDemo" src="www/PaymentDemo.js">
+        <clobbers target="PaymentDemo" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="PaymentDemo">
+                <param name="android-package" value="sts.plugin.paymentdemo.PaymentDemo" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/PaymentDemo.java" target-dir="src/sts/plugin/paymentdemo/PaymentDemo" />
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="PaymentDemo">
+                <param name="ios-package" value="PaymentDemo" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/PaymentDemo.m" />
+    </platform>
+</plugin>
